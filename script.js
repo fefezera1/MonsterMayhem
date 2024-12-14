@@ -38,4 +38,33 @@ function placeMonster(row, col, player) {
 function getHexagon(row, col) {
   return document.querySelector(`.hexagon[data-row="${row}"][data-col="${col}"]`);
 }
+// Highlight valid moves
+function highlightValidMoves(hex) {
+  clearHighlights();
 
+  const row = parseInt(hex.dataset.row);
+  const col = parseInt(hex.dataset.col);
+
+  const neighbors =
+    row % 2 === 0
+      ? [[-1, 0], [-1, -1], [0, -1], [0, 1], [1, 0], [1, -1]]
+      : [[-1, 0], [-1, 1], [0, -1], [0, 1], [1, 0], [1, 1]];
+
+  neighbors.forEach(([dRow, dCol]) => {
+    const neighbor = getHexagon(row + dRow, col + dCol);
+    if (neighbor && !neighbor.classList.contains("player1") && !neighbor.classList.contains("player2")) {
+      neighbor.classList.add("highlight");
+    }
+  });
+}
+
+// Move monster
+function moveMonster(fromHex, toHex) {
+  const monster = fromHex.querySelector(".monster");
+  toHex.appendChild(monster);
+  toHex.classList.add(`player${currentPlayer}`);
+  playerPositions[currentPlayer] = toHex;
+
+  clearHighlights();
+  endTurn();
+}
