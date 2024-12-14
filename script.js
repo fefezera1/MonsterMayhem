@@ -1,6 +1,6 @@
 const board = document.getElementById("game-board");
-const ROWS = 11; // 12 rows
-const COLS = 11; // 12 columns
+const ROWS = 12;
+const COLS = 12;
 
 let currentPlayer = 1; // Player 1 starts
 let playerPositions = { 1: null, 2: null }; // Track player monster positions
