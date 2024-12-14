@@ -29,4 +29,20 @@ h1 {
   position: relative;
   transition: background-color 0.3s ease;
 }
+.hexagon:hover {
+  background-color: #d4a017; /* Hover effect */
+}
+
+.hexagon.player1 {
+  background-color: rgba(255, 0, 0, 0.7); /* Player 1's territory */
+}
+
+.hexagon.player2 {
+  background-color: rgba(0, 0, 255, 0.7); /* Player 2's territory */
+}
+
+.hexagon.highlight {
+  background-color: yellow; /* Highlight valid moves */
+}
+
 
