@@ -38,6 +38,20 @@ function placeMonster(row, col, player) {
 function getHexagon(row, col) {
   return document.querySelector(`.hexagon[data-row="${row}"][data-col="${col}"]`);
 }
+// Handle player clicks
+board.addEventListener("click", (e) => {
+  const hex = e.target;
+  if (!hex.classList.contains("hexagon")) return;
+
+  const currentHex = playerPositions[currentPlayer];
+  if (hex.classList.contains("highlight")) {
+    moveMonster(currentHex, hex);
+  } else {
+    highlightValidMoves(currentHex);
+  }
+});
+
+
 // Highlight valid moves
 function highlightValidMoves(hex) {
   clearHighlights();
