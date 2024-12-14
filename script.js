@@ -82,3 +82,20 @@ function moveMonster(fromHex, toHex) {
   clearHighlights();
   endTurn();
 }
+// Clear all highlights
+function clearHighlights() {
+  document.querySelectorAll(".hexagon.highlight").forEach((hex) => {
+    hex.classList.remove("highlight");
+  });
+}
+
+// End turn and check win conditions
+function endTurn() {
+  currentPlayer = currentPlayer === 1 ? 2 : 1;
+  document.getElementById("player-turn").textContent = `Player ${currentPlayer}'s Turn`;
+
+  if (document.querySelectorAll(".hexagon:not(.player1):not(.player2)").length === 0) {
+    declareWinner();
+  }
+}
+
