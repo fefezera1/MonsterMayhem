@@ -21,3 +21,21 @@ for (let row = 0; row < ROWS; row++) {
     board.appendChild(hexagon);
   }
 }
+// Place player monsters
+placeMonster(0, 0, 1); // Player 1 starts at top-left
+placeMonster(ROWS - 1, COLS - 1, 2); // Player 2 starts at bottom-right
+
+function placeMonster(row, col, player) {
+  const hexagon = getHexagon(row, col);
+  const monster = document.createElement("div");
+  monster.classList.add("monster", `player${player}-monster`);
+  hexagon.appendChild(monster);
+  hexagon.classList.add(`player${player}`);
+  playerPositions[player] = hexagon;
+}
+
+// Get hexagon by row and column
+function getHexagon(row, col) {
+  return document.querySelector(`.hexagon[data-row="${row}"][data-col="${col}"]`);
+}
+

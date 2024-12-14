@@ -44,5 +44,25 @@ h1 {
 .hexagon.highlight {
   background-color: yellow; /* Highlight valid moves */
 }
+/* Monsters */
+.monster {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 6px;
+  left: 10px;
+}
+
+.player1-monster {
+  background-image: url('images/player1.png'); /* Player 1 monster image */
+}
+
+.player2-monster {
+  background-image: url('images/player2.png'); /* Player 2 monster image */
+}
+
 
 
