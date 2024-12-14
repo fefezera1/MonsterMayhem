@@ -98,4 +98,22 @@ function endTurn() {
     declareWinner();
   }
 }
+// Declare the winner
+function declareWinner() {
+  const player1Count = document.querySelectorAll(".hexagon.player1").length;
+  const player2Count = document.querySelectorAll(".hexagon.player2").length;
+
+  if (player1Count > player2Count) {
+    alert("Player 1 Wins!");
+  } else if (player2Count > player1Count) {
+    alert("Player 2 Wins!");
+  } else {
+    alert("It's a tie!");
+  }
+
+  location.reload();
+}
+
+
+
 
