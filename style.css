@@ -9,4 +9,24 @@ body {
 h1 {
   margin: 20px;
 }
+#player-turn {
+  margin: 10px;
+}
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(12, 60px); /* 12 hexagons per row */
+  grid-auto-rows: 39px;
+  gap: 0;
+  justify-content: center;
+}
+
+/* Hexagon Styling */
+.hexagon {
+  width: 60px;
+  height: 52px;
+  background-color: #556b2f;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  position: relative;
+  transition: background-color 0.3s ease;
+}
 
