@@ -72,16 +72,22 @@ function highlightValidMoves(hex) {
   });
 }
 
-// Move monster
-function moveMonster(fromHex, toHex) {
-  const monster = fromHex.querySelector(".monster");
-  toHex.appendChild(monster);
-  toHex.classList.add(`player${currentPlayer}`);
-  playerPositions[currentPlayer] = toHex;
+function moveMonster(hex) {
+  const currentHex = playerPositions[currentPlayer]; // Current hex where the monster is located
+  const monster = currentHex.querySelector(".monster");
+
+  // Mark the current hex as dominated by the player's monster
+  currentHex.classList.add(`player${currentPlayer}-owned`);
+
+  // Move the monster to the new hexagon
+  hex.appendChild(monster);
+  hex.classList.add(`player${currentPlayer}`); // Mark the new hex as occupied by the player
+  playerPositions[currentPlayer] = hex; // Update the player's monster position
 
   clearHighlights();
   endTurn();
 }
+
 // Clear all highlights
 function clearHighlights() {
   document.querySelectorAll(".hexagon.highlight").forEach((hex) => {
