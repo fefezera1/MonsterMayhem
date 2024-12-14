@@ -63,6 +63,20 @@ h1 {
 .player2-monster {
   background-image: url('images/icons8-monster-120.png'); /* Player 2 monster image */
 }
+/* Dominated Hexagons */
+.player1-owned {
+  background-image: url('images/player1.png'); /* Replace with Player 1's static monster image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.player2-owned {
+  background-image: url('images/player2.png'); /* Replace with Player 2's static monster image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 
 
