@@ -57,11 +57,11 @@ h1 {
 }
 
 .player1-monster {
-  background-image: url('images/player1.png'); /* Player 1 monster image */
+  background-image: url('images/icons8-monster-64.png'); /* Player 1 monster image */
 }
 
 .player2-monster {
-  background-image: url('images/player2.png'); /* Player 2 monster image */
+  background-image: url('images/icons8-monster-120.png'); /* Player 2 monster image */
 }
 
 
