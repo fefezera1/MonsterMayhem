@@ -48,20 +48,24 @@ board.addEventListener("click", (e) => {
 });
 
 function moveMonster(targetHex) {
-  const currentHex = playerPositions[currentPlayer];
+  const currentHex = playerPositions[currentPlayer]; // Get the current hexagon with the monster
   const monster = currentHex.querySelector(".monster");
 
+  // Check if the move is valid
   if (!targetHex.classList.contains("highlight")) return;
 
-  // Mark current hex as dominated
+  // 1. Mark the current hex as dominated
   currentHex.classList.add(`player${currentPlayer}-owned`);
-  currentHex.classList.remove(`player${currentPlayer}`);
+  currentHex.classList.remove(`player${currentPlayer}`); // Remove "occupied" class
 
-  // Move monster
-  targetHex.appendChild(monster);
-  targetHex.classList.add(`player${currentPlayer}`);
+  // 2. Move the monster to the new hex
+  targetHex.appendChild(monster); // Transfer the monster to the new hexagon
+  targetHex.classList.add(`player${currentPlayer}`); // Mark the new hexagon as occupied
+
+  // 3. Update the player's position
   playerPositions[currentPlayer] = targetHex;
 
+  // Clear highlights and switch turns
   clearHighlights();
   endTurn();
 }

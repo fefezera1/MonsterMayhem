@@ -64,18 +64,22 @@ h1 {
   background-image: url('images/icons8-monster-120.png'); /* Player 2 monster image */
 }
 /* Dominated Hexagons */
+/* Player 1 Dominated Hexagons */
 .player1-owned {
-  background-image: url('images/player1.png'); /* Replace with Player 1's static monster image */
+  background-image: url('images/icons8-monster-64.png'); /* Replace with Player 1's monster face */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: rgba(255, 0, 0, 0.7); /* Semi-transparent red background */
 }
 
+/* Player 2 Dominated Hexagons */
 .player2-owned {
-  background-image: url('images/player2.png'); /* Replace with Player 2's static monster image */
+  background-image: url('images/icons8-monster-120.png'); /* Replace with Player 2's monster face */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: rgba(0, 0, 255, 0.7); /* Semi-transparent blue background */
 }
 
 
