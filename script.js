@@ -97,3 +97,6 @@ function endTurn() {
   currentPlayer = currentPlayer === 1 ? 2 : 1;
   document.getElementById("player-turn").textContent = `Player ${currentPlayer}'s Turn`;
 }
+document.getElementById('play-button').addEventListener('click', () => {
+  window.location.href = 'game.html'; // Link to your game page
+});
